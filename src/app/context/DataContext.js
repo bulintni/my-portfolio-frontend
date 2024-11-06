@@ -42,7 +42,7 @@ export const DataProvider = ({ children }) => {
     {
       id: 2, schoolName: "THAI-NICHIINSTITUTEOF TECHNOLOGY",
       dateTime: "2016-2019",
-      major: "Information technology-Multimediatechnology"
+      major: "Information Technology-Multimediatechnology"
     },
   ])
 
