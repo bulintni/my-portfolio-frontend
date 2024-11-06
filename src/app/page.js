@@ -1,101 +1,64 @@
-import Image from "next/image";
+"use client"
+import React from 'react'
+import Layout from '@/components/Layout'
+import { DataProvider } from './context/DataContext'
+import Image from 'next/image'
+import profileImage from '../assets/profile.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
-export default function Home() {
+function page() {
+  const goToPortfolio = () => {
+    window.open('https://github.com/bulintni', '_blank')
+  }
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <DataProvider>
+      {/* conatainer */}
+      <div className='flex flex-col justify-center items-center xl:mt-10 my-8'>
+        {/* Image */}
+        <div className='rounded-full overflow-hidden w-[400px] h-[400px] drop-shadow-md'>
+          <Image
+            className='object-cover object-[center_-50px]'
+            src={profileImage}
+            height={400}
+            width={400}
+            alt='Profile Image'
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        {/* Detail */}
+        <div className='flex w-[80%] justify-between gap-[3rem] xl:gap-[8rem] flex-col xl:flex-row md:items-center'>
+          <div className='flex-1 mx-10 lg:mx-0'>
+            <FontAwesomeIcon className="text-orange-500 mb-2" size='3x' icon={faQuoteLeft} />
+            <p>Hello, My name is Bulin and I want to find a job in the Frontend developer. I still have 6 month in doing Frontend work.
+            </p>
+          </div>
+          <div className='flex justify-center items-center text-center flex-3'>
+            <h1 className='text-[5rem] leading-tight drop-shadow-lg'>I'm <span className='text-orange-500 font-bold'>Bulin</span><br /> <span className='font-semibold text-gray-900'>Frontend <span className=''>Developer</span></span></h1>
+          </div>
+          <div className='flex-1 flex flex-col items-center justify-start lg:items-end'>
+            <h1 className='font-bold text-5xl mb-2'>
+              <span className='text-7xl text-orange-500'>
+                6
+              </span>
+              <span className='ml-2'>
+                Month
+              </span>
+            </h1>
+            <h1 className='text-xl border-b-2 border-b-orange-500'>Experinces</h1>
+          </div>
+        </div>
+        <div className=' p-1 border-[0.1rem] border-gray-400 rounded-full flex items-center bg-gray-400 bg-opacity-5 mt-8'>
+          <button className='text-black border-[0.1rem] bg-orange-500 font-bold px-5 py-2 rounded-full text-xl text-white'
+            onClick={goToPortfolio}
+          >Portfolio<span className='ml-2'><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span></button>
+          <h1 className='px-5 py-2'>Hire Me</h1>
+        </div>
+      </div>
+    </DataProvider>
+  )
 }
+
+export default page
