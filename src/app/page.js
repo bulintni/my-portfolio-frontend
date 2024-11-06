@@ -36,7 +36,7 @@ function page() {
             </p>
           </div>
           <div className='flex justify-center items-center text-center flex-3'>
-            <h1 className='text-[5rem] leading-tight drop-shadow-lg'>I'm <span className='text-orange-500 font-bold'>Bulin</span><br /> <span className='font-semibold text-gray-900'>Frontend <span className=''>Developer</span></span></h1>
+            <h1 className='text-[5rem] leading-tight drop-shadow-lg'>I am <span className='text-orange-500 font-bold'>Bulin</span><br /> <span className='font-semibold text-gray-900'>Frontend <span>Developer</span></span></h1>
           </div>
           <div className='flex-1 flex flex-col items-center justify-start lg:items-end'>
             <h1 className='font-bold text-5xl mb-2'>

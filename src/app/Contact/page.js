@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function contact() {
+export default function Contact() {
   const { Contact } = useDataContext();
   return (
     <div className='flex justify-center items-center mt-10'>

@@ -5,7 +5,7 @@ import AboutMeImg from '@/assets/About_me1.jpg'
 import { useDataContext } from '../context/DataContext'
 
 
-export default function about() {
+export default function About() {
   const { AboutMe, Education, MySkills } = useDataContext();
   const clickToResume = () => {
     window.open('https://drive.google.com/file/d/1F6JgDUPLznszh7Yy8XYWL8cI0u8PeZa9/view?usp=sharing', '_blank')
